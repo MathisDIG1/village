@@ -10,6 +10,7 @@ import smtplib
 import sqlite3
 import ssl
 import sys
+import threading
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from email.parser import BytesParser
@@ -445,12 +446,35 @@ Village Car Event
     username = os.environ.get("SMTP_USER")
     password = os.environ.get("SMTP_PASSWORD")
     use_tls = os.environ.get("SMTP_TLS", "1") != "0"
-    with smtplib.SMTP(host, port, timeout=20) as smtp:
+    with smtplib.SMTP(host, port, timeout=8) as smtp:
         if use_tls:
             smtp.starttls(context=ssl.create_default_context())
         if username and password:
             smtp.login(username, password)
         smtp.send_message(message)
+
+
+def log_mail_failure(row, decision, exc):
+    DATA_DIR.mkdir(exist_ok=True)
+    with MAIL_LOG.open("a", encoding="utf-8") as handle:
+        handle.write(
+            f"\n--- {now_iso()} MAIL ERROR ---\n"
+            f"To: {row.get('email')}\n"
+            f"Decision: {decision}\n"
+            f"Error: {type(exc).__name__}: {exc}\n"
+        )
+
+
+def send_decision_email_async(row, decision, note):
+    def worker():
+        try:
+            send_decision_email(row, decision, note)
+        except Exception as exc:
+            log_mail_failure(row, decision, exc)
+            print(f"Mail send failed for registration {row.get('id')}: {exc}", file=sys.stderr)
+
+    thread = threading.Thread(target=worker, daemon=True)
+    thread.start()
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -526,7 +550,7 @@ class Handler(BaseHTTPRequestHandler):
                 (status, note, now_iso(), registration_id),
             )
             row = dict(db.execute("select * from registrations where id = ?", (registration_id,)).fetchone())
-        send_decision_email(row, status, note)
+        send_decision_email_async(row, status, note)
         self.redirect("/admin")
 
     def handle_login(self):
