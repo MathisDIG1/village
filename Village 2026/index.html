@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Village 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="village">
+      <section class="section-dark" id="header">
+        <div id="background"></div>
+        <div class="hero-content">
+          <img class="logo" src="https://villagecarevent.com/images/village/village_logo_2017.png" alt="Village Car Event">
+
+          <div id="date">September 6th 2026 - 10U</div>
+          <div class="location location-wide">Sentower Park - Leemkuilstraat 22 - 3660 Oudsbergen Belgium</div>
+          <div class="location location-stacked">
+            <span>Sentower Park</span>
+            <span>Leemkuilstraat 22</span>
+            <span>3660 Oudsbergen Belgium</span>
+          </div>
+
+          <div class="button-row">
+            <a class="button button-primary" href="/register">Register your car <span class="button-icon">›</span></a>
+            <a class="button button-success show-info" href="#info">Visitor information <span class="button-icon">i</span></a>
+          </div>
+
+          <div id="counter" aria-label="Countdown to Village 2026">
+            <div class="counter-line"></div>
+            <div class="counter-grid">
+              <div>
+                <strong id="days">0</strong>
+                <span>days</span>
+              </div>
+              <div>
+                <strong id="hours">0</strong>
+                <span>hours</span>
+              </div>
+              <div>
+                <strong id="minutes">0</strong>
+                <span>minutes</span>
+              </div>
+              <div>
+                <strong id="seconds">0</strong>
+                <span>seconds</span>
+              </div>
+            </div>
+            <div class="counter-line"></div>
+          </div>
+
+          <div class="intro">
+            <p>On <em>September 6th 2026</em>, we’d like to welcome you again to <em>the 7th edition</em> of our event at <em>Sentower Park</em> in the lovely town of Oudsbergen, Belgium. Let's make this the best edition yet! <em>Quality is what we’re looking for</em>, stunning cars made by passionate people. Bring your beautiful modified car, and we'll make sure there's enough <em>food, drinks, shops &amp; a chill atmosphere!</em></p>
+            <p>And most important, it will be a <em>fun day full of long talks with other car enthusiasts.</em></p>
+          </div>
+
+          <div class="button-row button-row-small">
+            <a class="button button-small button-primary" href="https://www.facebook.com/pg/villagecarevent/photos/">Check out last year's pictures <span class="button-icon">›</span></a>
+            <a class="button button-small button-success" href="https://www.facebook.com/events/1205078121428172/?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22home%22%7D%2C%7B%22mechanism%22%3A%22search_results%22%2C%22surface%22%3A%22search%22%7D]%2C%22ref_notif_type%22%3Anull%7D"><span class="facebook">f</span> Facebook RSVP <span class="button-icon">›</span></a>
+          </div>
+
+          <a class="faq-link show-info" href="#info">? Practical information and frequently asked questions</a>
+        </div>
+      </section>
+
+      <section class="section-darker">
+        <div class="container">
+          <h2><span class="title-dot">✓</span> Latest registrations <span class="badge" id="registration-count">0</span></h2>
+          <div class="car-grid" id="car-list">
+            <p class="empty-state">No accepted registrations yet.</p>
+          </div>
+          <div class="loading-status">Loading more pictures...</div>
+          <button class="button button-success show-more" type="button">Show more <span class="button-icon">⌄</span></button>
+        </div>
+      </section>
+
+      <section class="section-light" id="info">
+        <div class="container faq-container">
+          <h2><span class="title-dot muted">?</span> Visitor information &amp; F.A.Q.</h2>
+          <div class="faq-list">
+            <h3>What will it cost me?</h3>
+            <p>Entrance fee is €20 for every car (including the driver), €5 for every extra passenger or other visitors, kids under the age of 12 can visit the show for free!</p>
+
+            <h3>Can my car enter the event?</h3>
+            <p>Tuned cars are selected by registering on the website or showing your car at the entrance, register if you are unsure about your car. Check the pictures of the 2026 edition of Village to see what type of cars we’re looking for. Registered/accepted cars are featured on our Facebook page and website!</p>
+
+            <h3>Do I have to register my car?</h3>
+            <p>If you have doubts about your car qualifying for the event, register it and we’ll let you know. If you’re certain that your car meets our requirements, entering the event without a registration is certainly possible!</p>
+
+            <h3>What happens after I register my car?</h3>
+            <p>You will receive an email with the acceptation or denial of your registration. Accepted registration mails will also include a unique voucher that will be scanned at the entrance. This document is linked to the exact car and owner, it can not be used for a different car or owner combination. Accepted cars will also be shown on the website and Facebook page!</p>
+
+            <h3>My car is accepted, do I have to print the voucher?</h3>
+            <p>The voucher will be scanned at the entrance, we can only scan vouchers that are printed or stored on a smartphone with a high quality screen, that can zoom in on the QR-code (most recent smartphones will work fine).</p>
+
+            <h3>I lost my voucher, where can I download it?</h3>
+            <p>Log in on CarPartPanda.com with the account you used for the registration, then you will be able to view your registration and download your voucher.</p>
+
+            <h3>I registered my car, I now have a different car/made big changes to my car, is it still accepted?</h3>
+            <p>If you made changes to your car or have a new car on the same numberplates as your previous car, please make a new registration.</p>
+
+            <h3>What if my car is denied? Can I make a new registration?</h3>
+            <p>If your car is denied after a registration, you can still visit the event as a visitor and enjoy the event with your friends and other visitors. If you make changes to your car and feel that it’s now qualified for the event, please make a new registration and we’ll take another look at your car. If your car is denied at the entrance, please respect our decision and have fun as a visitor.</p>
+            <p>Our opinion might be different than yours, that doesn’t mean that we can’t get along and enjoy ourselves, we share the same passion.</p>
+
+            <h3>I used fake pictures for my registration / I’m going to use my voucher with a different car, will it work?</h3>
+            <p>No, it will not work. When we scan the voucher, we can verify all your info and see if the pictures of the registration match your car at the entrance. In doubt, or when your car clearly doesn’t match the pictures or quality we’re looking for, we withhold the right to deny your car to the event.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>Copyright 2026 Village Car Event.</span>
+      <span>Website by DIG Marketing Agency.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
