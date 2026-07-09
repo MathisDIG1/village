@@ -43,7 +43,7 @@ a {
 }
 
 #background {
-  background: url("/data/491278171_993134059692408_3845796097242730337_n.jpg") center / cover no-repeat;
+  background: url("/491278171_993134059692408_3845796097242730337_n.jpg") center / cover no-repeat;
   opacity: .84;
 }
 
@@ -474,7 +474,7 @@ h2 {
 }
 
 .form-hero::before {
-  background: url("/data/491278171_993134059692408_3845796097242730337_n.jpg") center / cover no-repeat;
+  background: url("/491278171_993134059692408_3845796097242730337_n.jpg") center / cover no-repeat;
   opacity: .72;
 }
 
