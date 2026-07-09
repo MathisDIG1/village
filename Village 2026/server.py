@@ -155,7 +155,7 @@ def registration_form(message=""):
         f"""
 <main class="form-page">
   <section class="form-hero">
-    <img class="logo" src="https://villagecarevent.com/images/village/village_logo_2017.png" alt="Village Car Event">
+    <img class="logo" src="/village_logo_2017.png" alt="Village Car Event">
     <h1>Register your car</h1>
     <p>Village Car Event - September 6th 2026</p>
   </section>
@@ -194,7 +194,7 @@ def success_page():
         """
 <main class="form-page">
   <section class="form-hero">
-    <img class="logo" src="https://villagecarevent.com/images/village/village_logo_2017.png" alt="Village Car Event">
+    <img class="logo" src="/village_logo_2017.png" alt="Village Car Event">
     <h1>Registration received</h1>
     <p>Thanks, we will review your car and send you an email when a decision has been made.</p>
     <a class="button button-success" href="/">Back to event page <span class="button-icon">›</span></a>
@@ -211,7 +211,7 @@ def login_page(message="", next_path="/admin"):
         f"""
 <main class="form-page login-page">
   <section class="form-hero login-hero">
-    <img class="logo" src="https://villagecarevent.com/images/village/village_logo_2017.png" alt="Village Car Event">
+    <img class="logo" src="/village_logo_2017.png" alt="Village Car Event">
     <h1>Admin login</h1>
     <p>Village Car Event registrations</p>
   </section>
