@@ -503,8 +503,12 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(accepted_api())
         if path.startswith("/uploads/"):
             return self.serve_upload(path)
-        if path in {"/style.css", "/script.js", "/491278171_993134059692408_3845796097242730337_n.jpg"}:
-            return self.serve_file(ROOT / path.lstrip("/"))
+        # Serve static files from root (but not special paths)
+        if path.startswith("/") and not path.startswith("/admin") and not path.startswith("/api") and not path.startswith("/uploads") and not path.startswith("/register"):
+            # Check if it's a file in ROOT
+            file_path = ROOT / path.lstrip("/")
+            if file_path.exists() and file_path.is_file():
+                return self.serve_file(file_path)
         self.send_error(HTTPStatus.NOT_FOUND)
 
     def do_POST(self):
