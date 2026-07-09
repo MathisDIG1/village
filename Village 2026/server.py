@@ -503,7 +503,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(accepted_api())
         if path.startswith("/uploads/"):
             return self.serve_upload(path)
-        if path in {"/style.css", "/script.js"}:
+        if path in {"/style.css", "/script.js", "/491278171_993134059692408_3845796097242730337_n.jpg"}:
             return self.serve_file(ROOT / path.lstrip("/"))
         self.send_error(HTTPStatus.NOT_FOUND)
 
